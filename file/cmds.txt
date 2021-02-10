@@ -1,0 +1,30 @@
+git config --global user.name
+git config --global user.name "NDIAYE"
+git config --global user.email
+
+git init
+git add filename.ext || git add -A //all || git status
+git checkout -f .\database\seeds\UserTableSeeder.php // restore a deleted file
+//EVERY COMMIT HAS HIS OWN & UNIQUE IDENTIFIANT
+git commit -m "First commit" || git log // to view commit created
+
+// add modifications to the previous commit // in order to not create another commit
+git status | git add -A
+git commit --amend --no-edit // si on souhaite tjrs conserver le libellé du précédent commit
+git commit --amend (win-exit: ctrl+o | :x)
+
+//Si ... pas encore publié les modifications (sur github)
+git reset --hard +idcommit //annuler les modifications qui ont lieu après le commit
+git reset --soft +idcommit //permet d'annuler le commit tout en gardant les modifications qui ont été annulées
+	after (win-exit: ctrl+o | :x)
+git diff .\database\seeds\UserTableSeeder.php // to know changes done in a file
+
+git show commit_id // to view changes done with this commit
+
+//BRANCHES
+git branch // in order to know in what branch we are
+git checkout -b branch_name // creation d'une nouvelle branche
+git checkout branch_name // go (or switch) to another branch
+git merge branch_name //(se positionner dans master) fusionner le branch_name to master
+git branch -d branch_name //supprimer une branche après fusion
+git branch -D branch_name //supprimer une branche même si elle n'est pas encore fusionnée
